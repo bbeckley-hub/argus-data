@@ -155,10 +155,27 @@ reported by `saurus --about argus`.
   carry accession lists; users fetch assemblies from NCBI with the `datasets`
   tool or raw reads from the SRA with their client of choice. This keeps every
   release small (tens of MB) and free of redistribution constraints.
-- Each bundle is rebuildable from public NCBI data. The containerised
-  reconstruction and curation pipeline (StaphScope-based) ships with the
-  matching CLI source repository, so the dataset can be regenerated or
+- Each bundle is rebuildable from public NCBI data. - Each bundle is rebuildable from public NCBI data. The full reconstruction
+  and curation pipeline (StaphScope 2.1.0-based: HPC download/typing lane,
+  batch checkpoints, merge and gene-curation scripts, and all site
+  generators) ships in the [argus-code](https://github.com/bbeckley-hub/argus-code) repository
+  (subdirectory `saurus/`), so the dataset can be regenerated or
   independently extended from the snapshot recorded in the manifest.
+  
+---
+
+## Rebuilding or extending a release
+
+The `saurus/` directory of
+[argus-code](https://github.com/bbeckley-hub/argus-code) contains the
+complete checkpoint state of the SAURUS pipeline: 14 gzipped StaphScope
+2.1.0 batch summaries covering the 134,160 typed genomes, the merged table
+seeds, the gene-curation chain, and every web-resource generator. A fresh
+clone reproduces the shipped state with two commands:
+`scripts/restore_seeds.sh` then `scripts/Regenerate_all.sh`. To extend the
+dataset with new genomes, follow `saurus/HPC_scripts/README.md` (download
++ typing lane), drop the finished batch into `saurus/batches/`, and rerun
+the merge-and-generate chain documented in `saurus/scripts/README.md`.
 
 ---
 
