@@ -196,8 +196,11 @@ product's publication and the data release DOI:
 
 - SAURUS: Beckley B. SAURUS-CLI: a reproducible command-line interface for
   typing-based genome retrieval in *Staphylococcus aureus*. BMC Bioinformatics
-  (under review). Data release: saurus-data-v1.1.0,
-  <https://github.com/bbeckley-hub/argus-data/releases/tag/saurus-data-v1.1.0> `[DOI to follow]`
+  (under review).
+- Data release: saurus-data-v1.1.0,
+  <https://github.com/bbeckley-hub/argus-data/releases/tag/saurus-data-v1.1.0>
+- Beckley, B. (2026). SAURUS data release v1.1.0: typing and gene-annotation tables for
+  134K Staphylococcus aureus genomes (Version v1.1.0) [Dataset]. Zenodo. https://doi.org/10.5281/zenodo.24568725
 - ECLIPSE / ABYSS: see <https://argus-db.org/> for current references.
 
 ---
